@@ -1,0 +1,21 @@
+
+GO BEGIN ;
+BEGIN :
+NONE  ;
+
+GET R0 , 00000007H  ;
+CPY R1 , R0  ;
+
+GOZ R0 , ZERO  ;
+GONZ R0 , FACT  ;
+
+ZERO :
+GET R0 , 00000001H  ;
+STOP  ;
+
+FACT :
+DEC R1  ;
+MUL R0 , R1 , R0  ;
+GONZ R1 FACT  ;
+STOP  ;
+

@@ -1,0 +1,20 @@
+
+
+
+GO BEGIN  ;
+BEGIN : 
+NONE   ;
+
+GPI R2R3 , 00000005H   ;
+GPI R4R5 , 00000001H   ;
+CPP R1 , R4R5   ;
+CPYI R0 , 0000H  ;
+
+ADD :
+SUMP R0 , R2R3  ;
+INP R2R3  ;
+DEC R1  ;
+GONZ R1 , ADD  ;
+
+STOP  ; 
+

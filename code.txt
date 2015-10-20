@@ -1,0 +1,17 @@
+	
+	get r1  26H ;
+	mem m  25H ;
+	getm r2  m ;
+label1:
+	minus r1 ;
+	jz out1 ;
+	minusx m ;
+	getm r3  m ;
+	cmp r2 r3 ;
+	jnc label1 ;
+label2:
+	 mov r2 r3 ;
+	jmp label1 ;
+out1:
+	disp r2  01H ;
+	stop;
